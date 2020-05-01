@@ -7,26 +7,64 @@
 //
 
 #import "MainViewController.h"
+#import "MainViewModel.h"
 
 @interface MainViewController ()
 
+@property (nonatomic, strong, readonly) MainViewModel *viewModel;
+
 @end
 
-@implementation MainViewController
+@implementation MainViewController {
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.tableView registerClass:UITableViewCell.class forCellReuseIdentifier:@"ParkingTableViewCell"];
+    
+    _viewModel = [[MainViewModel alloc] init];
+    
+    _locationManager = [[CLLocationManager alloc] init];
+    [_locationManager setDelegate:self];
+    [_locationManager requestWhenInUseAuthorization];
+    
+    [[self.viewModel.hasUpdated deliverOnMainThread]  subscribeNext:^(id _) {
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
+        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark UITableViewDataSource
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ParkingTableViewCell" forIndexPath:indexPath];
+    
+    cell.textLabel.text = [[self.viewModel parkingAtIndexPath:indexPath] name];
+    
+    return cell;
 }
-*/
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [_viewModel numberOfRowsInSection:section];
+}
+
+#pragma mark UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+#pragma mark CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    if(status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [_locationManager startUpdatingLocation];
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    [_viewModel loadNearbyParkings:[locations objectAtIndex:0]];
+}
 
 @end

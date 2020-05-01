@@ -7,10 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+#import "Parking.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MainViewModel : NSObject
+
+@property (nonatomic, readonly) RACSignal *hasUpdated;
+
+- (instancetype)init;
+- (void)loadNearbyParkings:(CLLocation *)location;
+- (NSUInteger)numberOfRowsInSection:(NSInteger)section;
+- (Parking *)parkingAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
