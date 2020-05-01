@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CADFCD51245B0E4F007F8190 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCD50245B0E4F007F8190 /* AppDelegate.m */; };
+		CADFCD54245B0E4F007F8190 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCD53245B0E4F007F8190 /* SceneDelegate.m */; };
+		CADFCD57245B0E4F007F8190 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCD56245B0E4F007F8190 /* ViewController.m */; };
+		CADFCD5A245B0E4F007F8190 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CADFCD58245B0E4F007F8190 /* Main.storyboard */; };
+		CADFCD5C245B0E71007F8190 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CADFCD5B245B0E71007F8190 /* Assets.xcassets */; };
+		CADFCD5F245B0E71007F8190 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CADFCD5D245B0E71007F8190 /* LaunchScreen.storyboard */; };
+		CADFCD62245B0E71007F8190 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCD61245B0E71007F8190 /* main.m */; };
+		CADFCD6C245B0E72007F8190 /* Find_ParkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCD6B245B0E72007F8190 /* Find_ParkingTests.m */; };
+		CADFCD77245B0E72007F8190 /* Find_ParkingUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCD76245B0E72007F8190 /* Find_ParkingUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CADFCD68245B0E72007F8190 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CADFCD44245B0E4F007F8190 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CADFCD4B245B0E4F007F8190;
+			remoteInfo = "Find Parking";
+		};
+		CADFCD73245B0E72007F8190 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CADFCD44245B0E4F007F8190 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CADFCD4B245B0E4F007F8190;
+			remoteInfo = "Find Parking";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CADFCD4C245B0E4F007F8190 /* Find Parking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find Parking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CADFCD4F245B0E4F007F8190 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CADFCD50245B0E4F007F8190 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CADFCD52245B0E4F007F8190 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		CADFCD53245B0E4F007F8190 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		CADFCD55245B0E4F007F8190 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CADFCD56245B0E4F007F8190 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CADFCD59245B0E4F007F8190 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CADFCD5B245B0E71007F8190 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CADFCD5E245B0E71007F8190 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CADFCD60245B0E71007F8190 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CADFCD61245B0E71007F8190 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CADFCD67245B0E72007F8190 /* Find ParkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Find ParkingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CADFCD6B245B0E72007F8190 /* Find_ParkingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Find_ParkingTests.m; sourceTree = "<group>"; };
+		CADFCD6D245B0E72007F8190 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CADFCD72245B0E72007F8190 /* Find ParkingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Find ParkingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CADFCD76245B0E72007F8190 /* Find_ParkingUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Find_ParkingUITests.m; sourceTree = "<group>"; };
+		CADFCD78245B0E72007F8190 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CADFCD49245B0E4F007F8190 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CADFCD64245B0E72007F8190 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CADFCD6F245B0E72007F8190 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CADFCD43245B0E4F007F8190 = {
+			isa = PBXGroup;
+			children = (
+				CADFCD4E245B0E4F007F8190 /* Find Parking */,
+				CADFCD6A245B0E72007F8190 /* Find ParkingTests */,
+				CADFCD75245B0E72007F8190 /* Find ParkingUITests */,
+				CADFCD4D245B0E4F007F8190 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CADFCD4D245B0E4F007F8190 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CADFCD4C245B0E4F007F8190 /* Find Parking.app */,
+				CADFCD67245B0E72007F8190 /* Find ParkingTests.xctest */,
+				CADFCD72245B0E72007F8190 /* Find ParkingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CADFCD4E245B0E4F007F8190 /* Find Parking */ = {
+			isa = PBXGroup;
+			children = (
+				CADFCD4F245B0E4F007F8190 /* AppDelegate.h */,
+				CADFCD50245B0E4F007F8190 /* AppDelegate.m */,
+				CADFCD52245B0E4F007F8190 /* SceneDelegate.h */,
+				CADFCD53245B0E4F007F8190 /* SceneDelegate.m */,
+				CADFCD55245B0E4F007F8190 /* ViewController.h */,
+				CADFCD56245B0E4F007F8190 /* ViewController.m */,
+				CADFCD58245B0E4F007F8190 /* Main.storyboard */,
+				CADFCD5B245B0E71007F8190 /* Assets.xcassets */,
+				CADFCD5D245B0E71007F8190 /* LaunchScreen.storyboard */,
+				CADFCD60245B0E71007F8190 /* Info.plist */,
+				CADFCD61245B0E71007F8190 /* main.m */,
+			);
+			path = "Find Parking";
+			sourceTree = "<group>";
+		};
+		CADFCD6A245B0E72007F8190 /* Find ParkingTests */ = {
+			isa = PBXGroup;
+			children = (
+				CADFCD6B245B0E72007F8190 /* Find_ParkingTests.m */,
+				CADFCD6D245B0E72007F8190 /* Info.plist */,
+			);
+			path = "Find ParkingTests";
+			sourceTree = "<group>";
+		};
+		CADFCD75245B0E72007F8190 /* Find ParkingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CADFCD76245B0E72007F8190 /* Find_ParkingUITests.m */,
+				CADFCD78245B0E72007F8190 /* Info.plist */,
+			);
+			path = "Find ParkingUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CADFCD4B245B0E4F007F8190 /* Find Parking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CADFCD7B245B0E72007F8190 /* Build configuration list for PBXNativeTarget "Find Parking" */;
+			buildPhases = (
+				CADFCD48245B0E4F007F8190 /* Sources */,
+				CADFCD49245B0E4F007F8190 /* Frameworks */,
+				CADFCD4A245B0E4F007F8190 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Find Parking";
+			productName = "Find Parking";
+			productReference = CADFCD4C245B0E4F007F8190 /* Find Parking.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CADFCD66245B0E72007F8190 /* Find ParkingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CADFCD7E245B0E72007F8190 /* Build configuration list for PBXNativeTarget "Find ParkingTests" */;
+			buildPhases = (
+				CADFCD63245B0E72007F8190 /* Sources */,
+				CADFCD64245B0E72007F8190 /* Frameworks */,
+				CADFCD65245B0E72007F8190 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CADFCD69245B0E72007F8190 /* PBXTargetDependency */,
+			);
+			name = "Find ParkingTests";
+			productName = "Find ParkingTests";
+			productReference = CADFCD67245B0E72007F8190 /* Find ParkingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CADFCD71245B0E72007F8190 /* Find ParkingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CADFCD81245B0E72007F8190 /* Build configuration list for PBXNativeTarget "Find ParkingUITests" */;
+			buildPhases = (
+				CADFCD6E245B0E72007F8190 /* Sources */,
+				CADFCD6F245B0E72007F8190 /* Frameworks */,
+				CADFCD70245B0E72007F8190 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CADFCD74245B0E72007F8190 /* PBXTargetDependency */,
+			);
+			name = "Find ParkingUITests";
+			productName = "Find ParkingUITests";
+			productReference = CADFCD72245B0E72007F8190 /* Find ParkingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CADFCD44245B0E4F007F8190 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Bruno Rodrigues";
+				TargetAttributes = {
+					CADFCD4B245B0E4F007F8190 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					CADFCD66245B0E72007F8190 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = CADFCD4B245B0E4F007F8190;
+					};
+					CADFCD71245B0E72007F8190 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = CADFCD4B245B0E4F007F8190;
+					};
+				};
+			};
+			buildConfigurationList = CADFCD47245B0E4F007F8190 /* Build configuration list for PBXProject "Find Parking" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CADFCD43245B0E4F007F8190;
+			productRefGroup = CADFCD4D245B0E4F007F8190 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CADFCD4B245B0E4F007F8190 /* Find Parking */,
+				CADFCD66245B0E72007F8190 /* Find ParkingTests */,
+				CADFCD71245B0E72007F8190 /* Find ParkingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CADFCD4A245B0E4F007F8190 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CADFCD5F245B0E71007F8190 /* LaunchScreen.storyboard in Resources */,
+				CADFCD5C245B0E71007F8190 /* Assets.xcassets in Resources */,
+				CADFCD5A245B0E4F007F8190 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CADFCD65245B0E72007F8190 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CADFCD70245B0E72007F8190 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CADFCD48245B0E4F007F8190 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CADFCD57245B0E4F007F8190 /* ViewController.m in Sources */,
+				CADFCD51245B0E4F007F8190 /* AppDelegate.m in Sources */,
+				CADFCD62245B0E71007F8190 /* main.m in Sources */,
+				CADFCD54245B0E4F007F8190 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CADFCD63245B0E72007F8190 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CADFCD6C245B0E72007F8190 /* Find_ParkingTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CADFCD6E245B0E72007F8190 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CADFCD77245B0E72007F8190 /* Find_ParkingUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CADFCD69245B0E72007F8190 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CADFCD4B245B0E4F007F8190 /* Find Parking */;
+			targetProxy = CADFCD68245B0E72007F8190 /* PBXContainerItemProxy */;
+		};
+		CADFCD74245B0E72007F8190 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CADFCD4B245B0E4F007F8190 /* Find Parking */;
+			targetProxy = CADFCD73245B0E72007F8190 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CADFCD58245B0E4F007F8190 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CADFCD59245B0E4F007F8190 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CADFCD5D245B0E71007F8190 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CADFCD5E245B0E71007F8190 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CADFCD79245B0E72007F8190 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CADFCD7A245B0E72007F8190 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CADFCD7C245B0E72007F8190 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Find Parking/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunorodrigues.Find-Parking";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CADFCD7D245B0E72007F8190 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Find Parking/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunorodrigues.Find-Parking";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CADFCD7F245B0E72007F8190 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Find ParkingTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunorodrigues.Find-ParkingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Find Parking.app/Find Parking";
+			};
+			name = Debug;
+		};
+		CADFCD80245B0E72007F8190 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Find ParkingTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunorodrigues.Find-ParkingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Find Parking.app/Find Parking";
+			};
+			name = Release;
+		};
+		CADFCD82245B0E72007F8190 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Find ParkingUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunorodrigues.Find-ParkingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Find Parking";
+			};
+			name = Debug;
+		};
+		CADFCD83245B0E72007F8190 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Find ParkingUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.brunorodrigues.Find-ParkingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Find Parking";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CADFCD47245B0E4F007F8190 /* Build configuration list for PBXProject "Find Parking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CADFCD79245B0E72007F8190 /* Debug */,
+				CADFCD7A245B0E72007F8190 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CADFCD7B245B0E72007F8190 /* Build configuration list for PBXNativeTarget "Find Parking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CADFCD7C245B0E72007F8190 /* Debug */,
+				CADFCD7D245B0E72007F8190 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CADFCD7E245B0E72007F8190 /* Build configuration list for PBXNativeTarget "Find ParkingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CADFCD7F245B0E72007F8190 /* Debug */,
+				CADFCD80245B0E72007F8190 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CADFCD81245B0E72007F8190 /* Build configuration list for PBXNativeTarget "Find ParkingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CADFCD82245B0E72007F8190 /* Debug */,
+				CADFCD83245B0E72007F8190 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CADFCD44245B0E4F007F8190 /* Project object */;
+}
