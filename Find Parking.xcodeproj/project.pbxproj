@@ -18,7 +18,9 @@
 		CADFCD8C245C565A007F8190 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCD8B245C565A007F8190 /* MainViewController.m */; };
 		CADFCD90245C5EF8007F8190 /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCD8F245C5EF8007F8190 /* MainViewModel.m */; };
 		CADFCD98245CD175007F8190 /* Parking.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCD97245CD175007F8190 /* Parking.m */; };
-		CADFCD9C245CDDF6007F8190 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCD9B245CDDF6007F8190 /* Connection.m */; };
+		CADFCDA0245CFBF1007F8190 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCD9F245CFBF1007F8190 /* Utils.m */; };
+		CADFCDA3245CFCA7007F8190 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCDA2245CFCA7007F8190 /* Location.m */; };
+		CADFCDAD245D0424007F8190 /* Connection.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCDAC245D0424007F8190 /* Connection.m */; };
 		E8C4DBC63D7CF314F6437D0E /* Pods_Find_Parking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A66B28635BFA139A05D1B707 /* Pods_Find_Parking.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,8 +67,12 @@
 		CADFCD91245C6202007F8190 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		CADFCD96245CD175007F8190 /* Parking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Parking.h; sourceTree = "<group>"; };
 		CADFCD97245CD175007F8190 /* Parking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Parking.m; sourceTree = "<group>"; };
-		CADFCD9A245CDDF6007F8190 /* Connection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
-		CADFCD9B245CDDF6007F8190 /* Connection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
+		CADFCD9E245CFBF1007F8190 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		CADFCD9F245CFBF1007F8190 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		CADFCDA1245CFCA7007F8190 /* Location.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		CADFCDA2245CFCA7007F8190 /* Location.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		CADFCDAB245D0424007F8190 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
+		CADFCDAC245D0424007F8190 /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
 		DCF8CCF08DAE3DD62C56D8A4 /* Pods-Find Parking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find Parking.release.xcconfig"; path = "Target Support Files/Pods-Find Parking/Pods-Find Parking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,7 +145,8 @@
 		CADFCD4E245B0E4F007F8190 /* Find Parking */ = {
 			isa = PBXGroup;
 			children = (
-				CADFCD99245CDDB9007F8190 /* Connection */,
+				CADFCDAA245D0424007F8190 /* Connection */,
+				CADFCD9D245CFB44007F8190 /* Utils */,
 				CADFCD92245C643E007F8190 /* Models */,
 				CADFCD8D245C5E8C007F8190 /* ViewModels */,
 				CADFCD84245C5557007F8190 /* Views */,
@@ -197,18 +204,28 @@
 			children = (
 				CADFCD96245CD175007F8190 /* Parking.h */,
 				CADFCD97245CD175007F8190 /* Parking.m */,
+				CADFCDA1245CFCA7007F8190 /* Location.h */,
+				CADFCDA2245CFCA7007F8190 /* Location.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		CADFCD99245CDDB9007F8190 /* Connection */ = {
+		CADFCD9D245CFB44007F8190 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				CADFCD9A245CDDF6007F8190 /* Connection.h */,
-				CADFCD9B245CDDF6007F8190 /* Connection.m */,
+				CADFCD9E245CFBF1007F8190 /* Utils.h */,
+				CADFCD9F245CFBF1007F8190 /* Utils.m */,
 			);
-			name = Connection;
-			path = "New Group";
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		CADFCDAA245D0424007F8190 /* Connection */ = {
+			isa = PBXGroup;
+			children = (
+				CADFCDAB245D0424007F8190 /* Connection.h */,
+				CADFCDAC245D0424007F8190 /* Connection.m */,
+			);
+			path = Connection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,9 +403,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CADFCD98245CD175007F8190 /* Parking.m in Sources */,
-				CADFCD9C245CDDF6007F8190 /* Connection.m in Sources */,
 				CADFCD51245B0E4F007F8190 /* AppDelegate.m in Sources */,
+				CADFCDA0245CFBF1007F8190 /* Utils.m in Sources */,
+				CADFCDA3245CFCA7007F8190 /* Location.m in Sources */,
 				CADFCD62245B0E71007F8190 /* main.m in Sources */,
+				CADFCDAD245D0424007F8190 /* Connection.m in Sources */,
 				CADFCD8C245C565A007F8190 /* MainViewController.m in Sources */,
 				CADFCD90245C5EF8007F8190 /* MainViewModel.m in Sources */,
 				CADFCD54245B0E4F007F8190 /* SceneDelegate.m in Sources */,

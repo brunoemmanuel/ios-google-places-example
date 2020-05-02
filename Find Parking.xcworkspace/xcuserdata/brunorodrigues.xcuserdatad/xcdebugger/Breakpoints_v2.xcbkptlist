@@ -14,8 +14,8 @@
             filePath = "Find Parking/Views/MainViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "-locationManager:didChangeAuthorizationStatus:"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,10 +30,74 @@
             filePath = "Find Parking/New Group/Connection.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "-loadNearbyParkingsWithLatitude:andLongitude:andRadius:"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2B1280B9-69C5-4107-9764-3B9BCA748B94"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Find Parking/Utils/Utils.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "+distanceBetweenStartedLocation:andFinalLocation:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F75FF85B-7CA5-477C-8E92-A34EB079FA5E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Find Parking/ViewModels/MainViewModel.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "-loadNearbyParkings:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F75FF85B-7CA5-477C-8E92-A34EB079FA5E - b3d2f462ae804"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[MainViewModel loadNearbyParkings:]"
+                  moduleName = "Find Parking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunorodrigues/Documents/personal/find-parking/Find%20Parking/ViewModels/MainViewModel.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "294">
+               </Location>
+               <Location
+                  uuid = "F75FF85B-7CA5-477C-8E92-A34EB079FA5E - d7a62ffe0c15ab1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__36-[MainViewModel loadNearbyParkings:]_block_invoke"
+                  moduleName = "Find Parking"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunorodrigues/Documents/personal/find-parking/Find%20Parking/ViewModels/MainViewModel.m"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "15">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

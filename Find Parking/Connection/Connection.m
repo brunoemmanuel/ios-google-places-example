@@ -7,6 +7,7 @@
 //
 
 #import "Connection.h"
+#import "Utils.h"
 
 #define API_KEY @"AIzaSyAww7mo50bhnPLbMTD2Yx8qEYNbR973j9A"
 #define BASE_URL @"https://maps.googleapis.com/maps/api/place"
@@ -35,17 +36,15 @@
     return result;
 }
 
--(NSArray<Parking *> *) loadNearbyParkingsWithLatitude:(float)latitude andLongitude:(float)longitude andRadius:(int)radius {
-    NSString *query = [NSString stringWithFormat:@"/nearbysearch/json?location=%f,%f&radius=%i&type=parking",  latitude, longitude, radius];
+-(NSArray<Parking *> *) loadNearbyParkingsWithLocation:(Location *)location andRadius:(int)radius {
+    NSString *query = [NSString stringWithFormat:@"/nearbysearch/json?location=%f,%f&radius=%i&type=parking",  location.latitude, location.longitude, radius];
 
     NSDictionary *requestResult = [self requestWithMethod:@"GET" andQuery:query];
     NSArray *tempArr = [requestResult objectForKey:@"results"];
     NSMutableArray *result = [[NSMutableArray alloc] init];
     
     for(NSDictionary * temp in tempArr) {
-        Parking *parking = [[Parking alloc] init];
-        [parking setName:[temp objectForKey:@"name"]];
-        [parking setPlaceId:[temp objectForKey:@"place_id"]];
+        Parking *parking = [[Parking alloc] initWithDictionary:temp];
         [result addObject:parking];
     }
 

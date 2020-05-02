@@ -27,6 +27,7 @@
     
     _locationManager = [[CLLocationManager alloc] init];
     [_locationManager setDelegate:self];
+    [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     [_locationManager requestWhenInUseAuthorization];
     
     [[self.viewModel.hasUpdated deliverOnMainThread]  subscribeNext:^(id _) {
@@ -41,6 +42,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ParkingTableViewCell" forIndexPath:indexPath];
     
     cell.textLabel.text = [[self.viewModel parkingAtIndexPath:indexPath] name];
+    
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png"]]];
+    [[cell imageView] setImage:image];
+    [cell setNeedsLayout];
     
     return cell;
 }

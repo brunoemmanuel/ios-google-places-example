@@ -10,4 +10,18 @@
 
 @implementation Parking
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+    self = [super init];
+    if (!self) return nil;
+    
+    [self setName:[dictionary objectForKey:@"name"]];
+    [self setPlaceId:[dictionary objectForKey:@"place_id"]];
+    
+    if([dictionary objectForKey:@"geometry"] && [[dictionary objectForKey:@"geometry"] objectForKey:@"location"]) {
+        [self setLocation:[[Location alloc] initWithDictionary:[[dictionary objectForKey:@"geometry"] objectForKey:@"location"]]];
+    }
+    
+    return self;
+}
+
 @end
