@@ -43,10 +43,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ParkingTableViewCell" forIndexPath:indexPath];
     
     Parking *parking = [self.viewModel parkingAtIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %i", parking.name, parking.distance];
+    cell.textLabel.numberOfLines = 2;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@", parking.name];
     
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png"]]];
-    [[cell imageView] setImage:image];
+    [[cell imageView] setImage:[UIImage imageNamed:@"icon-parking.png"]];
     [cell setNeedsLayout];
     
     return cell;
