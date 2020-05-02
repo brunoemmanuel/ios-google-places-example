@@ -45,10 +45,21 @@
     
     for(NSDictionary * temp in tempArr) {
         Parking *parking = [[Parking alloc] initWithDictionary:temp];
+        [parking setDistance:[Utils distanceBetweenStartedLocation:parking.location andFinalLocation: location]];
         [result addObject:parking];
     }
 
     return result;
+}
+
+- (Parking *) loadParkingDetailsWithPlaceId:(NSString *)placeId {
+    NSString *query = [NSString stringWithFormat:@"/details/json?placeid=%@", placeId];
+    
+    NSDictionary *requestResult = [self requestWithMethod:@"GET" andQuery:query];
+    NSDictionary *temp = [requestResult objectForKey:@"result"];
+    Parking *parking = [[Parking alloc] initWithDictionary:temp];
+    
+    return parking;
 }
 
 @end

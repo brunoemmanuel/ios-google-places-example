@@ -14,7 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Connection : NSObject
 
--(NSArray<Parking *> *) loadNearbyParkingsWithLocation:(Location *)location andRadius:(int)radius;
+- (NSArray<Parking *> *) loadNearbyParkingsWithLocation:(Location *)location andRadius:(int)radius;
+- (Parking *) loadParkingDetailsWithPlaceId:(NSString *)placeId;
 
 @end
 

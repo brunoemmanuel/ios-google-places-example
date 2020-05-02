@@ -22,6 +22,7 @@
 - (instancetype)init {
     self = [super init];
     if (!self) return nil;
+    _parkings = [[NSMutableArray alloc] init];
 
     _hasUpdated = [RACObserve(self, parkings) mapReplace:@(YES)];
 
@@ -37,22 +38,19 @@
     [location setLatitude:clLocation.coordinate.latitude];
     [location setLongitude:clLocation.coordinate.longitude];
     
-    NSArray * temp = [[[Connection alloc] init] loadNearbyParkingsWithLocation:location andRadius:300];
-    
-    temp = [temp sortedArrayUsingComparator:^NSComparisonResult(Parking *obj1, Parking *obj2) {
-        int dist1 = [Utils distanceBetweenStartedLocation:[obj1 location] andFinalLocation: location];
-        int dist2 = [Utils distanceBetweenStartedLocation:[obj2 location] andFinalLocation: location];
+    NSArray<Parking *> * result = [[[Connection alloc] init] loadNearbyParkingsWithLocation:location andRadius:300];
+    result = [result sortedArrayUsingComparator:^NSComparisonResult(Parking *obj1, Parking *obj2) {
         
-        if(dist2 < dist1) {
-            NSLog([NSString stringWithFormat:@"%@ - %i", obj2.name, dist2]);
-            return dist2;
+        if(obj1.distance == obj2.distance) {
+            return 0;
+        } else if(obj1.distance > obj2.distance) {
+            return 1;
         } else {
-            NSLog([NSString stringWithFormat:@"%@ - %i", obj1.name, dist1]);
-            return dist1;
+            return -1;
         }
     }];
     
-    [self setParkings:temp];
+    [self setParkings:result];
 }
 
 - (Parking *)parkingAtIndexPath:(NSIndexPath *)indexPath {

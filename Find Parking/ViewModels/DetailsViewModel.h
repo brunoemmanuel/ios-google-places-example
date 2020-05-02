@@ -1,28 +1,25 @@
 //
-//  Parking.h
+//  DetailsViewModel.h
 //  Find Parking
 //
-//  Created by Bruno Rodrigues on 01/05/20.
+//  Created by Bruno Rodrigues on 02/05/20.
 //  Copyright © 2020 Bruno Rodrigues. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import "Location.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Parking : NSObject
-
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+@interface DetailsViewModel : NSObject
 
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *placeId;
-@property (nonatomic) double rating;
+@property (nonatomic, strong) NSString *rating;
 @property (nonatomic, strong) NSString *address;
 @property (nonatomic, strong) NSString *website;
 @property (nonatomic, strong) NSString *phone;
-@property (nonatomic, strong) Location *location;
-@property (nonatomic) int distance;
+
+- (void)loadParkingDetailsWithPlaceId:(NSString *)placeId;
 
 @end
 

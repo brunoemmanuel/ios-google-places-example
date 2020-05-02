@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "MainViewModel.h"
+#import "DetailsViewController.h"
 
 @interface MainViewController ()
 
@@ -41,7 +42,8 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ParkingTableViewCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = [[self.viewModel parkingAtIndexPath:indexPath] name];
+    Parking *parking = [self.viewModel parkingAtIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ - %i", parking.name, parking.distance];
     
     UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png"]]];
     [[cell imageView] setImage:image];
@@ -57,7 +59,10 @@
 #pragma mark UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DetailsViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
+    [viewController setParking:[_viewModel parkingAtIndexPath:indexPath]];
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 #pragma mark CLLocationManagerDelegate
