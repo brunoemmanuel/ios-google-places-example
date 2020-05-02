@@ -62,4 +62,8 @@
     [_viewModel loadParkingDetailsWithPlaceId:_parking.placeId];
 }
 
+- (IBAction)back:(UIBarButtonItem *)sender {
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end
