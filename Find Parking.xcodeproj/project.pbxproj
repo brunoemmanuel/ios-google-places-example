@@ -31,6 +31,8 @@
 		CADFCDC0245DE3C9007F8190 /* icon-address@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CADFCDB8245DE3C9007F8190 /* icon-address@2x.png */; };
 		CADFCDC1245DE3C9007F8190 /* icon-website@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CADFCDB9245DE3C9007F8190 /* icon-website@2x.png */; };
 		CADFCDC4245DECA3007F8190 /* DetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCDC3245DECA3007F8190 /* DetailsViewModel.m */; };
+		CADFCDC7245E0F6D007F8190 /* icon-parking@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CADFCDC5245E0F6C007F8190 /* icon-parking@2x.png */; };
+		CADFCDC8245E0F6D007F8190 /* icon-parking@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CADFCDC6245E0F6D007F8190 /* icon-parking@3x.png */; };
 		E8C4DBC63D7CF314F6437D0E /* Pods_Find_Parking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A66B28635BFA139A05D1B707 /* Pods_Find_Parking.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +97,8 @@
 		CADFCDB9245DE3C9007F8190 /* icon-website@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-website@2x.png"; sourceTree = "<group>"; };
 		CADFCDC2245DECA3007F8190 /* DetailsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewModel.h; sourceTree = "<group>"; };
 		CADFCDC3245DECA3007F8190 /* DetailsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewModel.m; sourceTree = "<group>"; };
+		CADFCDC5245E0F6C007F8190 /* icon-parking@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-parking@2x.png"; sourceTree = "<group>"; };
+		CADFCDC6245E0F6D007F8190 /* icon-parking@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-parking@3x.png"; sourceTree = "<group>"; };
 		DCF8CCF08DAE3DD62C56D8A4 /* Pods-Find Parking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find Parking.release.xcconfig"; path = "Target Support Files/Pods-Find Parking/Pods-Find Parking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,6 +262,8 @@
 		CADFCDB1245DE3B4007F8190 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				CADFCDC5245E0F6C007F8190 /* icon-parking@2x.png */,
+				CADFCDC6245E0F6D007F8190 /* icon-parking@3x.png */,
 				CADFCDB8245DE3C9007F8190 /* icon-address@2x.png */,
 				CADFCDB2245DE3C8007F8190 /* icon-address@3x.png */,
 				CADFCDB3245DE3C8007F8190 /* icon-marker@2x.png */,
@@ -381,7 +387,9 @@
 				CADFCDBD245DE3C9007F8190 /* icon-phone@3x.png in Resources */,
 				CADFCDBA245DE3C9007F8190 /* icon-address@3x.png in Resources */,
 				CADFCDBF245DE3C9007F8190 /* icon-phone@2x.png in Resources */,
+				CADFCDC7245E0F6D007F8190 /* icon-parking@2x.png in Resources */,
 				CADFCDBB245DE3C9007F8190 /* icon-marker@2x.png in Resources */,
+				CADFCDC8245E0F6D007F8190 /* icon-parking@3x.png in Resources */,
 				CADFCD5C245B0E71007F8190 /* Assets.xcassets in Resources */,
 				CADFCDC1245DE3C9007F8190 /* icon-website@2x.png in Resources */,
 				CADFCDC0245DE3C9007F8190 /* icon-address@2x.png in Resources */,
