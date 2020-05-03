@@ -8,6 +8,7 @@
 
 #import "DetailsViewController.h"
 #import "DetailsViewModel.h"
+#import "Utils.h"
 
 @interface DetailsViewController ()
 
@@ -44,17 +45,25 @@
     
     [[_viewModel locationUpdated] subscribeNext:^(id x) {
         Location *location = [[self viewModel] parkingLocation];
-        
-        MKCoordinateRegion region;
-        region.center.latitude = location.latitude;
-        region.center.longitude = location.longitude;
-        region.span.latitudeDelta = 0.005;
-        region.span.longitudeDelta = 0.005;
-        
-        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] initWithCoordinate:region.center];
-        [[self mapView] addAnnotation:annotation];
-        
-        [[self mapView] setRegion:region animated:YES];
+        if(location != nil) {
+            MKCoordinateRegion region;
+            region.center.latitude = location.latitude;
+            region.center.longitude = location.longitude;
+            region.span.latitudeDelta = 0.005;
+            region.span.longitudeDelta = 0.005;
+            
+            MKPointAnnotation *annotation = [[MKPointAnnotation alloc] initWithCoordinate:region.center];
+            [[self mapView] addAnnotation:annotation];
+            
+            [[self mapView] setRegion:region animated:YES];
+        }
+    }];
+    
+    [[_viewModel errorUpdated]  subscribeNext:^(id _) {
+        NSString *errorMessage = [[self viewModel] errorMessage];
+        if(errorMessage != nil) {
+            [Utils showAlertErrorWithError:errorMessage andParent:self];
+        }
     }];
     
     [_mapView setZoomEnabled:NO];

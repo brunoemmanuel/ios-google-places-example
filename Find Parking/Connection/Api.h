@@ -7,15 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Parking.h"
 #import "Location.h"
+#import "NearbyParkingsResponse.h"
+#import "ParkingDetailsResponse.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Api : NSObject
 
-- (NSArray<Parking *> *) loadNearbyParkingsWithLocation:(Location *)location andRadius:(int)radius;
-- (Parking *) loadParkingDetailsWithPlaceId:(NSString *)placeId;
+- (NearbyParkingsResponse *) loadNearbyParkingsWithLocation:(Location *)location andRadius:(int)radius;
+- (ParkingDetailsResponse *) loadParkingDetailsWithPlaceId:(NSString *)placeId;
 
 @end
 

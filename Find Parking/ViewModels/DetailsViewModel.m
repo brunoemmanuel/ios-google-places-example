@@ -9,16 +9,17 @@
 #import "DetailsViewModel.h"
 #import "Parking.h"
 #import "Api.h"
+#import "ParkingDetailsResponse.h"
 
 @interface DetailsViewModel()
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *rating;
-@property (nonatomic, strong) NSString *address;
-@property (nonatomic, strong) NSString *website;
-@property (nonatomic, strong) NSString *phone;
-@property (nonatomic, strong) Location *location;
-
+@property (nonatomic, strong) NSString *parkingName;
+@property (nonatomic, strong) NSString *parkingRating;
+@property (nonatomic, strong) NSString *parkingAddress;
+@property (nonatomic, strong) NSString *parkingWebsite;
+@property (nonatomic, strong) NSString *parkingPhone;
+@property (nonatomic, strong) Location *parkingLocation;
+@property (nonatomic, strong) NSString *errorMessage;
 
 @end
 
@@ -28,74 +29,52 @@
     self = [super init];
     if (!self) return nil;
     
-    _nameUpdated = [RACObserve(self, name) mapReplace:@(YES)];
-    _ratingUpdated = [RACObserve(self, rating) mapReplace:@(YES)];
-    _addressUpdated = [RACObserve(self, address) mapReplace:@(YES)];
-    _websiteUpdated = [RACObserve(self, website) mapReplace:@(YES)];
-    _phoneUpdated = [RACObserve(self, phone) mapReplace:@(YES)];
-    _locationUpdated = [RACObserve(self, location) mapReplace:@(YES)];
+    _nameUpdated = [RACObserve(self, parkingName) mapReplace:@(YES)];
+    _ratingUpdated = [RACObserve(self, parkingRating) mapReplace:@(YES)];
+    _addressUpdated = [RACObserve(self, parkingAddress) mapReplace:@(YES)];
+    _websiteUpdated = [RACObserve(self, parkingWebsite) mapReplace:@(YES)];
+    _phoneUpdated = [RACObserve(self, parkingPhone) mapReplace:@(YES)];
+    _locationUpdated = [RACObserve(self, parkingLocation) mapReplace:@(YES)];
+    _errorUpdated = [RACObserve(self, errorMessage) mapReplace:@(YES)];
     
-    _name = @"...";
-    _rating = @"...";
-    _address = @"...";
-    _website = @"...";
-    _phone = @"...";
+    _parkingName = @"...";
+    _parkingRating = @"...";
+    _parkingAddress = @"...";
+    _parkingWebsite = @"...";
+    _parkingPhone = @"...";
 
     return self;
 }
 
 - (void)loadParkingDetailsWithPlaceId:(NSString *)placeId {
-    Parking *parkingDetails = [[Api alloc] loadParkingDetailsWithPlaceId:placeId];
-    
-    if(parkingDetails.name != nil) {
-        [self setName:parkingDetails.name];
+    ParkingDetailsResponse *result = [[Api alloc] loadParkingDetailsWithPlaceId:placeId];
+    if(result.error != nil) {
+        [self setErrorMessage:result.error];
+    } else {
+        Parking *parkingDetails = [result parking];
+        
+        if(parkingDetails.name != nil) {
+            [self setParkingName:parkingDetails.name];
+        }
+        
+        [self setParkingRating:[NSString stringWithFormat:@"%.01f", parkingDetails.rating]];
+        
+        if(parkingDetails.address != nil) {
+            [self setParkingAddress:parkingDetails.address];
+        }
+        
+        if(parkingDetails.website != nil) {
+            [self setParkingWebsite:parkingDetails.website];
+        }
+        
+        if(parkingDetails.phone != nil) {
+            [self setParkingPhone:parkingDetails.phone];
+        }
+        
+        if(parkingDetails.location != nil) {
+            [self setParkingLocation:parkingDetails.location];
+        }
     }
-    
-    [self setRating:[NSString stringWithFormat:@"%.01f", parkingDetails.rating]];
-    
-    if(parkingDetails.address != nil) {
-        [self setAddress:parkingDetails.address];
-    }
-    
-    if(parkingDetails.address != nil) {
-        [self setAddress:parkingDetails.address];
-    }
-    
-    if(parkingDetails.website != nil) {
-        [self setWebsite:parkingDetails.website];
-    }
-    
-    if(parkingDetails.phone != nil) {
-        [self setPhone:parkingDetails.phone];
-    }
-    
-    if(parkingDetails.location != nil) {
-        [self setLocation:parkingDetails.location];
-    }
-}
-
-- (NSString *)parkingName {
-    return _name;
-}
-
-- (NSString *)parkingRating {
-    return _rating;
-}
-
-- (NSString *)parkingAddress {
-    return _address;
-}
-
-- (NSString *)parkingWebsite {
-    return _website;
-}
-
-- (NSString *)parkingPhone {
-    return _phone;
-}
-
-- (Location *)parkingLocation {
-    return _location;
 }
 
 @end

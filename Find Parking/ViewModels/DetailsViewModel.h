@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) RACSignal *websiteUpdated;
 @property (nonatomic, readonly) RACSignal *phoneUpdated;
 @property (nonatomic, readonly) RACSignal *locationUpdated;
+@property (nonatomic, readonly) RACSignal *errorUpdated;
 
 - (void)loadParkingDetailsWithPlaceId:(NSString *)placeId;
 - (NSString *)parkingName;
@@ -29,6 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)parkingWebsite;
 - (NSString *)parkingPhone;
 - (Location *)parkingLocation;
+- (NSString *)errorMessage;
 
 @end
 

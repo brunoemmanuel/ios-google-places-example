@@ -15,11 +15,13 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MainViewModel : NSObject
 
 @property (nonatomic, readonly) RACSignal *dataListUpdated;
+@property (nonatomic, readonly) RACSignal *errorUpdated;
 
 - (instancetype)init;
 - (void)loadNearbyParkings:(CLLocation *)location;
 - (NSUInteger)numberOfRowsInSection:(NSInteger)section;
 - (Parking *)parkingAtIndexPath:(NSIndexPath *)indexPath;
+- (NSString *)errorMessage;
 
 @end
 

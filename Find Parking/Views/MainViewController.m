@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "MainViewModel.h"
 #import "DetailsViewController.h"
+#import "Utils.h"
 
 @interface MainViewController ()
 
@@ -35,6 +36,13 @@
         if([[self viewModel] numberOfRowsInSection:0] > 0 && [[self tableView] isHidden]) {
             [[self tableView] setHidden:NO];
             [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+    }];
+    
+    [[_viewModel errorUpdated]  subscribeNext:^(id _) {
+        NSString *errorMessage = [[self viewModel] errorMessage];
+        if(errorMessage != nil) {
+            [Utils showAlertErrorWithError:errorMessage andParent:self];
         }
     }];
 }

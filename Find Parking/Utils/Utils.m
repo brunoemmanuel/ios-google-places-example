@@ -11,6 +11,17 @@
 
 @implementation Utils
 
++ (void)showAlertErrorWithError:(NSString *)errormessage andParent:(UIViewController *)viewController {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Attention!" message:errormessage preferredStyle: UIAlertControllerStyleAlert];
+    
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler: ^ (UIAlertAction * _Nonnull action) {
+        NSLog(@ "Dismiss Tapped");
+    }];
+    
+    [alert addAction:action];
+    [viewController  presentViewController:alert animated:true completion:nil];
+}
+
 + (int)distanceBetweenStartedLocation:(Location *)startedLocation andFinalLocation:(Location *)finalLocation {
     int R = 6371e3;
     

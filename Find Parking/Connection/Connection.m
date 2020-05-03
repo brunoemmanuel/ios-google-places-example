@@ -27,14 +27,25 @@
 
     NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
 
-    if([responseCode statusCode] != 200){
-        NSLog(@"Error getting %@, HTTP status code %li", url, (long)[responseCode statusCode]);
-        return nil;
+    if(error != nil) {
+        NSString *errorMessage = [[NSString alloc] stringByAppendingFormat:@"%@", error.localizedDescription];
+        NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:errorMessage, @"errorMessage", nil];
+        return dict;
+    } else if([responseCode statusCode] != 200) {
+        NSString *errorMessage = @"Connection error";
+        NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:errorMessage, @"errorMessage", nil];
+        return dict;
+    } else {
+        NSDictionary *result = [NSJSONSerialization JSONObjectWithData:oResponseData options:0 error:nil];
+        
+        if([[result objectForKey:@"status"] isEqualToString:@"OK"]) {
+            return result;
+        } else {
+            NSString *errorMessage = [result objectForKey:@"error_message"];
+            NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:errorMessage, @"errorMessage", nil];
+            return dict;
+        }
     }
-    
-    NSDictionary *result = [NSJSONSerialization JSONObjectWithData:oResponseData options:0 error:nil];
-    
-    return result;
 }
 
 @end
