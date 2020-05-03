@@ -15,7 +15,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qI0-R9-2Ph">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="46g-gt-va9">
+                                <rect key="frame" x="197" y="358" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qI0-R9-2Ph">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -39,6 +42,8 @@
                             <constraint firstItem="qI0-R9-2Ph" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2XT-K0-IFI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qI0-R9-2Ph" secondAttribute="bottom" id="AJx-yl-a4x"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qI0-R9-2Ph" secondAttribute="trailing" id="D9c-QR-p2u"/>
+                            <constraint firstItem="46g-gt-va9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KU2-bb-KkW"/>
+                            <constraint firstItem="46g-gt-va9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QFc-yR-6XE"/>
                             <constraint firstItem="qI0-R9-2Ph" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cSr-cu-K2u"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
