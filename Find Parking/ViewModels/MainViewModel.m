@@ -7,7 +7,7 @@
 //
 
 #import "MainViewModel.h"
-#import "Connection.h"
+#import "Api.h"
 #import "Location.h"
 #import "Utils.h"
 
@@ -38,7 +38,7 @@
     [location setLatitude:clLocation.coordinate.latitude];
     [location setLongitude:clLocation.coordinate.longitude];
     
-    NSArray<Parking *> * result = [[[Connection alloc] init] loadNearbyParkingsWithLocation:location andRadius:300];
+    NSArray<Parking *> * result = [[[Api alloc] init] loadNearbyParkingsWithLocation:location andRadius:300];
     result = [result sortedArrayUsingComparator:^NSComparisonResult(Parking *obj1, Parking *obj2) {
         
         if(obj1.distance == obj2.distance) {

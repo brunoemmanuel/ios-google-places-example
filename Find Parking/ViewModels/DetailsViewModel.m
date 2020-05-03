@@ -8,7 +8,7 @@
 
 #import "DetailsViewModel.h"
 #import "Parking.h"
-#import "Connection.h"
+#import "Api.h"
 
 @interface DetailsViewModel()
 
@@ -45,7 +45,7 @@
 }
 
 - (void)loadParkingDetailsWithPlaceId:(NSString *)placeId {
-    Parking *parkingDetails = [[Connection alloc] loadParkingDetailsWithPlaceId:placeId];
+    Parking *parkingDetails = [[Api alloc] loadParkingDetailsWithPlaceId:placeId];
     
     if(parkingDetails.name != nil) {
         [self setName:parkingDetails.name];

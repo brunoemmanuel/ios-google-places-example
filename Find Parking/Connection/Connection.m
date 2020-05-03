@@ -37,30 +37,4 @@
     return result;
 }
 
--(NSArray<Parking *> *) loadNearbyParkingsWithLocation:(Location *)location andRadius:(int)radius {
-    NSString *query = [NSString stringWithFormat:@"/nearbysearch/json?location=%f,%f&radius=%i&type=parking",  location.latitude, location.longitude, radius];
-
-    NSDictionary *requestResult = [self requestWithMethod:@"GET" andQuery:query];
-    NSArray *tempArr = [requestResult objectForKey:@"results"];
-    NSMutableArray *result = [[NSMutableArray alloc] init];
-    
-    for(NSDictionary * temp in tempArr) {
-        Parking *parking = [[Parking alloc] initWithDictionary:temp];
-        [parking setDistance:[Utils distanceBetweenStartedLocation:parking.location andFinalLocation: location]];
-        [result addObject:parking];
-    }
-
-    return result;
-}
-
-- (Parking *) loadParkingDetailsWithPlaceId:(NSString *)placeId {
-    NSString *query = [NSString stringWithFormat:@"/details/json?placeid=%@", placeId];
-    
-    NSDictionary *requestResult = [self requestWithMethod:@"GET" andQuery:query];
-    NSDictionary *temp = [requestResult objectForKey:@"result"];
-    Parking *parking = [[Parking alloc] initWithDictionary:temp];
-    
-    return parking;
-}
-
 @end
