@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MainViewModel : NSObject
 
-@property (nonatomic, readonly) RACSignal *hasUpdated;
+@property (nonatomic, readonly) RACSignal *dataListUpdated;
 
 - (instancetype)init;
 - (void)loadNearbyParkings:(CLLocation *)location;

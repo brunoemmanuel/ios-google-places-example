@@ -22,44 +22,47 @@
     
     _viewModel = [[DetailsViewModel alloc] init];
     
-    [RACObserve(self, viewModel.name) subscribeNext:^(NSString *value) {
-        [[self labelName] setText:value];
+    [[_viewModel nameUpdated] subscribeNext:^(id x) {
+        [[self labelName] setText:[[self viewModel] parkingName]];
     }];
     
-    [RACObserve(self, viewModel.rating) subscribeNext:^(NSString *value) {
-        [[self labelRating] setText:value];
+    [[_viewModel addressUpdated] subscribeNext:^(id x) {
+        [[self labelAddress] setText:[[self viewModel] parkingAddress]];
     }];
     
-    [RACObserve(self, viewModel.address) subscribeNext:^(NSString *value) {
-        [[self labelAddress] setText:value];
+    [[_viewModel ratingUpdated] subscribeNext:^(id x) {
+        [[self labelRating] setText:[[self viewModel] parkingRating]];
     }];
     
-    [RACObserve(self, viewModel.website) subscribeNext:^(NSString *value) {
-        [[self labelUrl] setText:value];
+    [[_viewModel websiteUpdated] subscribeNext:^(id x) {
+        [[self labelUrl] setText:[[self viewModel] parkingWebsite]];
     }];
     
-    [RACObserve(self, viewModel.phone) subscribeNext:^(NSString *value) {
-        [[self labelPhone] setText:value];
+    [[_viewModel phoneUpdated] subscribeNext:^(id x) {
+        [[self labelPhone] setText:[[self viewModel] parkingPhone]];
+    }];
+    
+    [[_viewModel locationUpdated] subscribeNext:^(id x) {
+        Location *location = [[self viewModel] parkingLocation];
+        
+        MKCoordinateRegion region;
+        region.center.latitude = location.latitude;
+        region.center.longitude = location.longitude;
+        region.span.latitudeDelta = 0.005;
+        region.span.longitudeDelta = 0.005;
+        
+        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] initWithCoordinate:region.center];
+        [[self mapView] addAnnotation:annotation];
+        
+        [[self mapView] setRegion:region animated:YES];
     }];
     
     [_mapView setZoomEnabled:NO];
     [_mapView setScrollEnabled:NO];
     [_mapView setUserInteractionEnabled:NO];
     
-    MKCoordinateRegion region;
-    region.center.latitude = _parking.location.latitude;
-    region.center.longitude = _parking.location.longitude;
-    region.span.latitudeDelta = 0.005;
-    region.span.longitudeDelta = 0.005;
     
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] initWithCoordinate:region.center];
-    [_mapView addAnnotation:annotation];
-    
-    [_mapView setRegion:region animated:YES];
-    
-    [_viewModel setName:_parking.name];
-    
-    [_viewModel loadParkingDetailsWithPlaceId:_parking.placeId];
+    [_viewModel loadParkingDetailsWithPlaceId:_placeId];
 }
 
 - (IBAction)back:(UIBarButtonItem *)sender {

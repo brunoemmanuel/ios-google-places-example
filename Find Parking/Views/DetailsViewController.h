@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *labelUrl;
 @property (weak, nonatomic) IBOutlet UILabel *labelPhone;
 
-@property (strong, nonatomic) Parking *parking;
+@property (strong, nonatomic) NSString *placeId;
 
 - (IBAction)back:(UIBarButtonItem *)sender;
 

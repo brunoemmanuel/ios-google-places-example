@@ -24,7 +24,7 @@
     if (!self) return nil;
     _parkings = [[NSMutableArray alloc] init];
 
-    _hasUpdated = [RACObserve(self, parkings) mapReplace:@(YES)];
+    _dataListUpdated = [RACObserve(self, parkings) mapReplace:@(YES)];
 
     return self;
 }

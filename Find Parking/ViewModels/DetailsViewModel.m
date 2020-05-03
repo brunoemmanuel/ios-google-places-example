@@ -12,6 +12,14 @@
 
 @interface DetailsViewModel()
 
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *rating;
+@property (nonatomic, strong) NSString *address;
+@property (nonatomic, strong) NSString *website;
+@property (nonatomic, strong) NSString *phone;
+@property (nonatomic, strong) Location *location;
+
+
 @end
 
 @implementation DetailsViewModel
@@ -19,7 +27,15 @@
 - (instancetype)init {
     self = [super init];
     if (!self) return nil;
-
+    
+    _nameUpdated = [RACObserve(self, name) mapReplace:@(YES)];
+    _ratingUpdated = [RACObserve(self, rating) mapReplace:@(YES)];
+    _addressUpdated = [RACObserve(self, address) mapReplace:@(YES)];
+    _websiteUpdated = [RACObserve(self, website) mapReplace:@(YES)];
+    _phoneUpdated = [RACObserve(self, phone) mapReplace:@(YES)];
+    _locationUpdated = [RACObserve(self, location) mapReplace:@(YES)];
+    
+    _name = @"...";
     _rating = @"...";
     _address = @"...";
     _website = @"...";
@@ -30,6 +46,10 @@
 
 - (void)loadParkingDetailsWithPlaceId:(NSString *)placeId {
     Parking *parkingDetails = [[Connection alloc] loadParkingDetailsWithPlaceId:placeId];
+    
+    if(parkingDetails.name != nil) {
+        [self setName:parkingDetails.name];
+    }
     
     [self setRating:[NSString stringWithFormat:@"%.01f", parkingDetails.rating]];
     
@@ -48,6 +68,34 @@
     if(parkingDetails.phone != nil) {
         [self setPhone:parkingDetails.phone];
     }
+    
+    if(parkingDetails.location != nil) {
+        [self setLocation:parkingDetails.location];
+    }
+}
+
+- (NSString *)parkingName {
+    return _name;
+}
+
+- (NSString *)parkingRating {
+    return _rating;
+}
+
+- (NSString *)parkingAddress {
+    return _address;
+}
+
+- (NSString *)parkingWebsite {
+    return _website;
+}
+
+- (NSString *)parkingPhone {
+    return _phone;
+}
+
+- (Location *)parkingLocation {
+    return _location;
 }
 
 @end

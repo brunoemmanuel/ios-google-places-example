@@ -6,6 +6,7 @@
 //  Copyright © 2020 Bruno Rodrigues. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "Connection.h"
 #import "Utils.h"
 

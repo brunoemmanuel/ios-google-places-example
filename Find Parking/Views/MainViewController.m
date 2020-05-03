@@ -31,7 +31,7 @@
     [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
     [_locationManager requestWhenInUseAuthorization];
     
-    [[self.viewModel.hasUpdated deliverOnMainThread]  subscribeNext:^(id _) {
+    [[self.viewModel.dataListUpdated deliverOnMainThread]  subscribeNext:^(id _) {
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:0];
         [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
     }];
@@ -61,7 +61,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     DetailsViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"DetailsViewController"];
-    [viewController setParking:[_viewModel parkingAtIndexPath:indexPath]];
+    [viewController setPlaceId:[[_viewModel parkingAtIndexPath:indexPath] placeId]];
     [self presentViewController:viewController animated:YES completion:nil];
 }
 

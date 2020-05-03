@@ -8,18 +8,27 @@
 
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "Location.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface DetailsViewModel : NSObject
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *rating;
-@property (nonatomic, strong) NSString *address;
-@property (nonatomic, strong) NSString *website;
-@property (nonatomic, strong) NSString *phone;
+
+@property (nonatomic, readonly) RACSignal *nameUpdated;
+@property (nonatomic, readonly) RACSignal *ratingUpdated;
+@property (nonatomic, readonly) RACSignal *addressUpdated;
+@property (nonatomic, readonly) RACSignal *websiteUpdated;
+@property (nonatomic, readonly) RACSignal *phoneUpdated;
+@property (nonatomic, readonly) RACSignal *locationUpdated;
 
 - (void)loadParkingDetailsWithPlaceId:(NSString *)placeId;
+- (NSString *)parkingName;
+- (NSString *)parkingRating;
+- (NSString *)parkingAddress;
+- (NSString *)parkingWebsite;
+- (NSString *)parkingPhone;
+- (Location *)parkingLocation;
 
 @end
 
