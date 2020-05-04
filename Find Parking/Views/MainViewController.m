@@ -18,8 +18,7 @@
 
 @end
 
-@implementation MainViewController {
-}
+@implementation MainViewController 
 
 - (void)viewDidLoad {
     [super viewDidLoad];

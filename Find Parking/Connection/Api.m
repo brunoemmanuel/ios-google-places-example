@@ -13,6 +13,10 @@
 @implementation Api
 
 -(NearbyParkingsResponse *) loadNearbyParkingsWithLocation:(Location *)location andRadius:(int)radius {
+    if([[[NSProcessInfo processInfo] arguments] containsObject:@"UI-TESTING"]) {
+        return [[NearbyParkingsResponse alloc] initWithDictionary:[Utils loadInfoPlistWithFileName:@"NearbyParkingsResponseMock"]];
+    }
+    
     NSString *query = [NSString stringWithFormat:@"/nearbysearch/json?location=%f,%f&radius=%i&type=parking",  location.latitude, location.longitude, radius];
     
     Connection *conn = [[Connection alloc] init];
@@ -24,6 +28,10 @@
 }
 
 - (ParkingDetailsResponse *) loadParkingDetailsWithPlaceId:(NSString *)placeId {
+    if([[[NSProcessInfo processInfo] arguments] containsObject:@"UI-TESTING"]) {
+        return [[ParkingDetailsResponse alloc] initWithDictionary:[Utils loadInfoPlistWithFileName:@"ParkingDetailsResponseMock"]];
+    }
+    
     NSString *query = [NSString stringWithFormat:@"/details/json?placeid=%@", placeId];
     
     Connection *conn = [[Connection alloc] init];
