@@ -18,16 +18,14 @@
 
 @interface MockApi : Api
 
--(NearbyParkingsResponse *) loadNearbyParkingsWithLocation:(Location *)location andRadius:(int)radius;
+@property (nonatomic, strong) NearbyParkingsResponse *response;
 
 @end
 
 @implementation MockApi
 
 -(NearbyParkingsResponse *) loadNearbyParkingsWithLocation:(Location *)location andRadius:(int)radius {
-    NearbyParkingsResponse *response = [[NearbyParkingsResponse alloc] initWithDictionary:[Utils loadInfoPlistWithFileName:@"NearbyParkingsResponseMock"]];
-    
-    return response;
+    return _response;
 }
 
 @end
@@ -47,23 +45,40 @@
 - (void)setUp {
     _mockApi = [[MockApi alloc] init];
     _viewModel = [[MainViewModel alloc] initWithApi:_mockApi];
+    _location = [[Location alloc] initWithDictionary:[Utils loadInfoPlistWithFileName:@"LocationMock"]];
 }
 
 - (void)tearDown {
     _mockApi = nil;
+    _viewModel = nil;
+    _location = nil;
 }
 
 - (void)testReturnedDataAfterLoad {
-    Location *location = [[Location alloc] initWithDictionary:[Utils loadInfoPlistWithFileName:@"LocationMock"]];
-    [_viewModel loadNearbyParkings:location];
-    XCTAssertEqual([_viewModel numberOfRowsInSection:0], 2);
+    _mockApi.response = [[NearbyParkingsResponse alloc] initWithDictionary:[Utils loadInfoPlistWithFileName:@"NearbyParkingsResponseMock"]];
+    [_viewModel loadNearbyParkings:_location];
+    
+    XCTAssertEqual([_viewModel numberOfRowsInSection:0], 3);
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testReturnedErrorIsEqualToServerError {
+    NSString *errorMessage = @"Connection error";
+    NSDictionary *dict =@{@"errorMessage": errorMessage};
+    _mockApi.response = [[NearbyParkingsResponse alloc] initWithDictionary:dict];
+    [_viewModel loadNearbyParkings:_location];
+    
+    XCTAssertEqual([_viewModel errorMessage], errorMessage);
+}
+
+- (void)testReturnedListIsOrderedByDistanceAsc {
+    _mockApi.response = [[NearbyParkingsResponse alloc] initWithDictionary:[Utils loadInfoPlistWithFileName:@"NearbyParkingsResponseMock"]];
+    [_viewModel loadNearbyParkings:_location];
+    
+    XCTAssertTrue([[[_viewModel parkingAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]] name] isEqualToString:@"test-name-0"]);
+    
+    XCTAssertTrue([[[_viewModel parkingAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]] name] isEqualToString:@"test-name-1"]);
+    
+    XCTAssertTrue([[[_viewModel parkingAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]] name] isEqualToString:@"test-name-2"]);
 }
 
 @end

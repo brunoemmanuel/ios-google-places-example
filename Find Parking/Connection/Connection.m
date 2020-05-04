@@ -32,18 +32,24 @@
         NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:errorMessage, @"errorMessage", nil];
         return dict;
     } else if([responseCode statusCode] != 200) {
-        NSString *errorMessage = @"Connection error";
+        NSString *errorMessage = @"Connection with server was a problem";
         NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:errorMessage, @"errorMessage", nil];
         return dict;
     } else {
-        NSDictionary *result = [NSJSONSerialization JSONObjectWithData:oResponseData options:0 error:nil];
+        error = nil;
+        NSDictionary *result = [NSJSONSerialization JSONObjectWithData:oResponseData options:0 error:&error];
         
-        if([[result objectForKey:@"status"] isEqualToString:@"OK"]) {
-            return result;
-        } else {
-            NSString *errorMessage = [result objectForKey:@"error_message"];
-            NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:errorMessage, @"errorMessage", nil];
+        if(error != nil) {
+            NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:@"Connection without response!", @"errorMessage", nil];
             return dict;
+        } else {
+            if([[result objectForKey:@"status"] isEqualToString:@"OK"]) {
+                return result;
+            } else {
+                NSString *errorMessage = [result objectForKey:@"error_message"];
+                NSDictionary *dict = [[NSDictionary alloc] initWithObjectsAndKeys:errorMessage, @"errorMessage", nil];
+                return dict;
+            }
         }
     }
 }

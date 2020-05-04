@@ -10,9 +10,9 @@
 				<key>location</key>
 				<dict>
 					<key>lng</key>
-					<real>-43.123</real>
+					<integer>0</integer>
 					<key>lat</key>
-                    <real>-23.123</real>
+					<integer>0</integer>
 				</dict>
 			</dict>
 			<key>formatted_phone_number</key>
@@ -26,7 +26,7 @@
 			<key>rating</key>
 			<string>1.2</string>
 			<key>name</key>
-			<string>test-name</string>
+			<string>test-name-0</string>
 		</dict>
 		<dict>
 			<key>geometry</key>
@@ -34,9 +34,9 @@
 				<key>location</key>
 				<dict>
 					<key>lng</key>
-                    <real>-43.123</real>
+					<integer>2</integer>
 					<key>lat</key>
-                    <real>-23.123</real>
+					<integer>2</integer>
 				</dict>
 			</dict>
 			<key>formatted_phone_number</key>
@@ -50,7 +50,31 @@
 			<key>rating</key>
 			<string>1.2</string>
 			<key>name</key>
-			<string>test-name</string>
+			<string>test-name-2</string>
+		</dict>
+		<dict>
+			<key>geometry</key>
+			<dict>
+				<key>location</key>
+				<dict>
+					<key>lng</key>
+					<integer>1</integer>
+					<key>lat</key>
+					<integer>1</integer>
+				</dict>
+			</dict>
+			<key>formatted_phone_number</key>
+			<string>(00) 1234-4568</string>
+			<key>formatted_address</key>
+			<string>Test Street, 100</string>
+			<key>website</key>
+			<string>https://www.testwebsite.com</string>
+			<key>place-id</key>
+			<string>abcd1234efgh</string>
+			<key>rating</key>
+			<string>1.2</string>
+			<key>name</key>
+			<string>test-name-1</string>
 		</dict>
 	</array>
 </dict>
