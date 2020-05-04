@@ -33,8 +33,11 @@
     [_locationManager requestWhenInUseAuthorization];
     
     [[self.viewModel.dataListUpdated deliverOnMainThread]  subscribeNext:^(id _) {
-        if([[self viewModel] numberOfRowsInSection:0] > 0 && [[self tableView] isHidden]) {
-            [[self tableView] setHidden:NO];
+        if([[self viewModel] numberOfRowsInSection:0] > 0) {
+            if([[self tableView] isHidden]) {
+                [[self tableView] setHidden:NO];
+            }
+            
             [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
         }
     }];

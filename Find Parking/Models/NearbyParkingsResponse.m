@@ -25,7 +25,6 @@
             if(tempArr != nil) {
                 for(NSDictionary * temp in tempArr) {
                     Parking *parking = [[Parking alloc] initWithDictionary:temp];
-                    //[parking setDistance:[Utils distanceBetweenStartedLocation:parking.location andFinalLocation: location]];
                     [result addObject:parking];
                 }
             }

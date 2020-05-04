@@ -46,6 +46,11 @@
         [self setErrorMessage:result.error];
     } else {
         NSArray *temp = [NSArray array];
+        for(int i = 0; i < result.parkings.count; i++) {
+            int distance = [Utils distanceBetweenStartedLocation:[[result.parkings objectAtIndex:i] location] andFinalLocation: location];
+            [[result.parkings objectAtIndex:i] setDistance:distance];
+        }
+        
         temp = [result.parkings sortedArrayUsingComparator:^NSComparisonResult(Parking *obj1, Parking *obj2) {
             
             if(obj1.distance == obj2.distance) {
