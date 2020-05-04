@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "Location.h"
+#import "Api.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) RACSignal *locationUpdated;
 @property (nonatomic, readonly) RACSignal *errorUpdated;
 
+- (instancetype)init;
+- (instancetype)initWithApi:(Api *)api;
 - (void)loadParkingDetailsWithPlaceId:(NSString *)placeId;
 - (NSString *)parkingName;
 - (NSString *)parkingRating;

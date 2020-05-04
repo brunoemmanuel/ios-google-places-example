@@ -8,11 +8,11 @@
 
 #import "DetailsViewModel.h"
 #import "Parking.h"
-#import "Api.h"
 #import "ParkingDetailsResponse.h"
 
 @interface DetailsViewModel()
 
+@property (nonatomic, strong) Api *api;
 @property (nonatomic, strong) NSString *parkingName;
 @property (nonatomic, strong) NSString *parkingRating;
 @property (nonatomic, strong) NSString *parkingAddress;
@@ -29,6 +29,25 @@
     self = [super init];
     if (!self) return nil;
     
+    [self initialize];
+    
+    _api = [[Api alloc] init];
+
+    return self;
+}
+
+- (instancetype)initWithApi:(Api *)api {
+    self = [super init];
+    if (!self) return nil;
+    
+    [self initialize];
+    
+    _api = api;
+
+    return self;
+}
+
+- (void)initialize {
     _nameUpdated = [RACObserve(self, parkingName) mapReplace:@(YES)];
     _ratingUpdated = [RACObserve(self, parkingRating) mapReplace:@(YES)];
     _addressUpdated = [RACObserve(self, parkingAddress) mapReplace:@(YES)];
@@ -42,12 +61,10 @@
     _parkingAddress = @"...";
     _parkingWebsite = @"...";
     _parkingPhone = @"...";
-
-    return self;
 }
 
 - (void)loadParkingDetailsWithPlaceId:(NSString *)placeId {
-    ParkingDetailsResponse *result = [[Api alloc] loadParkingDetailsWithPlaceId:placeId];
+    ParkingDetailsResponse *result = [_api loadParkingDetailsWithPlaceId:placeId];
     if(result.error != nil) {
         [self setErrorMessage:result.error];
     } else {

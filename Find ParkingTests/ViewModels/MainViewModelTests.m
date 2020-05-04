@@ -16,13 +16,13 @@
 
 #pragma mark - Mocks
 
-@interface MockApi : Api
+@interface MockApiNearbyParkings : Api
 
 @property (nonatomic, strong) NearbyParkingsResponse *response;
 
 @end
 
-@implementation MockApi
+@implementation MockApiNearbyParkings
 
 -(NearbyParkingsResponse *) loadNearbyParkingsWithLocation:(Location *)location andRadius:(int)radius {
     return _response;
@@ -34,7 +34,7 @@
 
 @interface MainViewModelTests : XCTestCase
 
-@property (nonatomic, strong) MockApi *mockApi;
+@property (nonatomic, strong) MockApiNearbyParkings *mockApi;
 @property (nonatomic, strong) MainViewModel *viewModel;
 @property (nonatomic, strong) Location *location;
 
@@ -43,7 +43,7 @@
 @implementation MainViewModelTests
 
 - (void)setUp {
-    _mockApi = [[MockApi alloc] init];
+    _mockApi = [[MockApiNearbyParkings alloc] init];
     _viewModel = [[MainViewModel alloc] initWithApi:_mockApi];
     _location = [[Location alloc] initWithDictionary:[Utils loadInfoPlistWithFileName:@"LocationMock"]];
 }
@@ -59,6 +59,7 @@
     [_viewModel loadNearbyParkings:_location];
     
     XCTAssertEqual([_viewModel numberOfRowsInSection:0], 3);
+    XCTAssertNil([_viewModel errorMessage]);
 }
 
 - (void)testReturnedErrorIsEqualToServerError {

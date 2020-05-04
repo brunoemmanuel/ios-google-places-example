@@ -42,6 +42,9 @@
 		CADFCDDC246085A5007F8190 /* NearbyParkingsResponseMock.plist in Resources */ = {isa = PBXBuildFile; fileRef = CADFCDD9246076A3007F8190 /* NearbyParkingsResponseMock.plist */; };
 		CADFCDDE246087CF007F8190 /* LocationMock.plist in Resources */ = {isa = PBXBuildFile; fileRef = CADFCDDD246087CF007F8190 /* LocationMock.plist */; };
 		CADFCDDF246087D8007F8190 /* LocationMock.plist in Resources */ = {isa = PBXBuildFile; fileRef = CADFCDDD246087CF007F8190 /* LocationMock.plist */; };
+		CADFCDE12460A493007F8190 /* DetailsViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCDE02460A493007F8190 /* DetailsViewModelTests.m */; };
+		CADFCDE32460AEBE007F8190 /* ParkingDetailsResponseMock.plist in Resources */ = {isa = PBXBuildFile; fileRef = CADFCDE22460AEBE007F8190 /* ParkingDetailsResponseMock.plist */; };
+		CADFCDE42460B00A007F8190 /* ParkingDetailsResponseMock.plist in Resources */ = {isa = PBXBuildFile; fileRef = CADFCDE22460AEBE007F8190 /* ParkingDetailsResponseMock.plist */; };
 		E8C4DBC63D7CF314F6437D0E /* Pods_Find_Parking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A66B28635BFA139A05D1B707 /* Pods_Find_Parking.framework */; };
 		F3DF57A95EBE1BC1D1F2834E /* Pods_Find_ParkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD5578968DBC7EB984E25CF /* Pods_Find_ParkingTests.framework */; };
 /* End PBXBuildFile section */
@@ -122,6 +125,8 @@
 		CADFCDD7246061F6007F8190 /* MainViewModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewModelTests.m; sourceTree = "<group>"; };
 		CADFCDD9246076A3007F8190 /* NearbyParkingsResponseMock.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = NearbyParkingsResponseMock.plist; sourceTree = "<group>"; };
 		CADFCDDD246087CF007F8190 /* LocationMock.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LocationMock.plist; sourceTree = "<group>"; };
+		CADFCDE02460A493007F8190 /* DetailsViewModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewModelTests.m; sourceTree = "<group>"; };
+		CADFCDE22460AEBE007F8190 /* ParkingDetailsResponseMock.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ParkingDetailsResponseMock.plist; sourceTree = "<group>"; };
 		DCF8CCF08DAE3DD62C56D8A4 /* Pods-Find Parking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find Parking.release.xcconfig"; path = "Target Support Files/Pods-Find Parking/Pods-Find Parking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +229,7 @@
 				CADFCD6D245B0E72007F8190 /* Info.plist */,
 				CADFCDD9246076A3007F8190 /* NearbyParkingsResponseMock.plist */,
 				CADFCDDD246087CF007F8190 /* LocationMock.plist */,
+				CADFCDE22460AEBE007F8190 /* ParkingDetailsResponseMock.plist */,
 			);
 			path = "Find ParkingTests";
 			sourceTree = "<group>";
@@ -317,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				CADFCDD7246061F6007F8190 /* MainViewModelTests.m */,
+				CADFCDE02460A493007F8190 /* DetailsViewModelTests.m */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -445,6 +452,7 @@
 				CADFCD5A245B0E4F007F8190 /* Main.storyboard in Resources */,
 				CADFCDDC246085A5007F8190 /* NearbyParkingsResponseMock.plist in Resources */,
 				CADFCDDF246087D8007F8190 /* LocationMock.plist in Resources */,
+				CADFCDE42460B00A007F8190 /* ParkingDetailsResponseMock.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +460,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CADFCDE32460AEBE007F8190 /* ParkingDetailsResponseMock.plist in Resources */,
 				CADFCDDA246076A3007F8190 /* NearbyParkingsResponseMock.plist in Resources */,
 				CADFCDDE246087CF007F8190 /* LocationMock.plist in Resources */,
 			);
@@ -574,6 +583,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CADFCDD8246061F8007F8190 /* MainViewModelTests.m in Sources */,
+				CADFCDE12460A493007F8190 /* DetailsViewModelTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
