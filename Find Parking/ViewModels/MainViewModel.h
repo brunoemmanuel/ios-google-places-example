@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "Parking.h"
+#import "Location.h"
+#import "Api.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,7 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) RACSignal *errorUpdated;
 
 - (instancetype)init;
-- (void)loadNearbyParkings:(CLLocation *)location;
+- (instancetype)initWithApi:(Api *)api;
+- (void)loadNearbyParkings:(Location *)location;
 - (NSUInteger)numberOfRowsInSection:(NSInteger)section;
 - (Parking *)parkingAtIndexPath:(NSIndexPath *)indexPath;
 - (NSString *)errorMessage;

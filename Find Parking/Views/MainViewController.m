@@ -10,6 +10,7 @@
 #import "MainViewModel.h"
 #import "DetailsViewController.h"
 #import "Utils.h"
+#import "Location.h"
 
 @interface MainViewController ()
 
@@ -87,7 +88,13 @@
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
-    [_viewModel loadNearbyParkings:[locations objectAtIndex:0]];
+    if([locations count] > 0) {
+        Location *location = [[Location alloc] init];
+        location.latitude = [locations objectAtIndex:0].coordinate.latitude;
+        location.longitude = [locations objectAtIndex:0].coordinate.longitude;
+        
+        [_viewModel loadNearbyParkings:location];
+    }
 }
 
 @end

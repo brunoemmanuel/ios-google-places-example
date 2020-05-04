@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>results</key>
+	<array>
+		<dict>
+			<key>geometry</key>
+			<dict>
+				<key>location</key>
+				<dict>
+					<key>lng</key>
+					<real>-43.123</real>
+					<key>lat</key>
+                    <real>-23.123</real>
+				</dict>
+			</dict>
+			<key>formatted_phone_number</key>
+			<string>(00) 1234-4568</string>
+			<key>formatted_address</key>
+			<string>Test Street, 100</string>
+			<key>website</key>
+			<string>https://www.testwebsite.com</string>
+			<key>place-id</key>
+			<string>abcd1234efgh</string>
+			<key>rating</key>
+			<string>1.2</string>
+			<key>name</key>
+			<string>test-name</string>
+		</dict>
+		<dict>
+			<key>geometry</key>
+			<dict>
+				<key>location</key>
+				<dict>
+					<key>lng</key>
+                    <real>-43.123</real>
+					<key>lat</key>
+                    <real>-23.123</real>
+				</dict>
+			</dict>
+			<key>formatted_phone_number</key>
+			<string>(00) 1234-4568</string>
+			<key>formatted_address</key>
+			<string>Test Street, 100</string>
+			<key>website</key>
+			<string>https://www.testwebsite.com</string>
+			<key>place-id</key>
+			<string>abcd1234efgh</string>
+			<key>rating</key>
+			<string>1.2</string>
+			<key>name</key>
+			<string>test-name</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -7,25 +7,56 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "Api.h"
+#import "NearbyParkingsResponse.h"
+#import "Parking.h"
+#import "MainViewModel.h"
+#import "Location.h"
+#import "Utils.h"
+
+#pragma mark - Mocks
+
+@interface MockApi : Api
+
+-(NearbyParkingsResponse *) loadNearbyParkingsWithLocation:(Location *)location andRadius:(int)radius;
+
+@end
+
+@implementation MockApi
+
+-(NearbyParkingsResponse *) loadNearbyParkingsWithLocation:(Location *)location andRadius:(int)radius {
+    NearbyParkingsResponse *response = [[NearbyParkingsResponse alloc] initWithDictionary:[Utils loadInfoPlistWithFileName:@"NearbyParkingsResponseMock"]];
+    
+    return response;
+}
+
+@end
+
+#pragma mark - Test Class
 
 @interface MainViewModelTests : XCTestCase
+
+@property (nonatomic, strong) MockApi *mockApi;
+@property (nonatomic, strong) MainViewModel *viewModel;
+@property (nonatomic, strong) Location *location;
 
 @end
 
 @implementation MainViewModelTests
 
 - (void)setUp {
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    _mockApi = [[MockApi alloc] init];
+    _viewModel = [[MainViewModel alloc] initWithApi:_mockApi];
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
+    _mockApi = nil;
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-    XCTAssertTrue(YES);
+- (void)testReturnedDataAfterLoad {
+    Location *location = [[Location alloc] initWithDictionary:[Utils loadInfoPlistWithFileName:@"LocationMock"]];
+    [_viewModel loadNearbyParkings:location];
+    XCTAssertEqual([_viewModel numberOfRowsInSection:0], 2);
 }
 
 - (void)testPerformanceExample {

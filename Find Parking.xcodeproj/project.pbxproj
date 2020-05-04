@@ -38,7 +38,12 @@
 		CADFCDD2245F21CB007F8190 /* NearbyParkingsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCDD1245F21CB007F8190 /* NearbyParkingsResponse.m */; };
 		CADFCDD5245F36F3007F8190 /* ParkingDetailsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCDD4245F36F3007F8190 /* ParkingDetailsResponse.m */; };
 		CADFCDD8246061F8007F8190 /* MainViewModelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CADFCDD7246061F6007F8190 /* MainViewModelTests.m */; };
+		CADFCDDA246076A3007F8190 /* NearbyParkingsResponseMock.plist in Resources */ = {isa = PBXBuildFile; fileRef = CADFCDD9246076A3007F8190 /* NearbyParkingsResponseMock.plist */; };
+		CADFCDDC246085A5007F8190 /* NearbyParkingsResponseMock.plist in Resources */ = {isa = PBXBuildFile; fileRef = CADFCDD9246076A3007F8190 /* NearbyParkingsResponseMock.plist */; };
+		CADFCDDE246087CF007F8190 /* LocationMock.plist in Resources */ = {isa = PBXBuildFile; fileRef = CADFCDDD246087CF007F8190 /* LocationMock.plist */; };
+		CADFCDDF246087D8007F8190 /* LocationMock.plist in Resources */ = {isa = PBXBuildFile; fileRef = CADFCDDD246087CF007F8190 /* LocationMock.plist */; };
 		E8C4DBC63D7CF314F6437D0E /* Pods_Find_Parking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A66B28635BFA139A05D1B707 /* Pods_Find_Parking.framework */; };
+		F3DF57A95EBE1BC1D1F2834E /* Pods_Find_ParkingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FD5578968DBC7EB984E25CF /* Pods_Find_ParkingTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,9 @@
 
 /* Begin PBXFileReference section */
 		0A1113CA93819000F09B6B21 /* Pods-Find Parking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find Parking.debug.xcconfig"; path = "Target Support Files/Pods-Find Parking/Pods-Find Parking.debug.xcconfig"; sourceTree = "<group>"; };
+		0FD5578968DBC7EB984E25CF /* Pods_Find_ParkingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_ParkingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D71180DBF1749C041384311 /* Pods-Find ParkingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find ParkingTests.release.xcconfig"; path = "Target Support Files/Pods-Find ParkingTests/Pods-Find ParkingTests.release.xcconfig"; sourceTree = "<group>"; };
+		9F1E798FBA8246C2D8096450 /* Pods-Find ParkingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find ParkingTests.debug.xcconfig"; path = "Target Support Files/Pods-Find ParkingTests/Pods-Find ParkingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A66B28635BFA139A05D1B707 /* Pods_Find_Parking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Find_Parking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADFCD4C245B0E4F007F8190 /* Find Parking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Find Parking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CADFCD4F245B0E4F007F8190 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,6 +120,8 @@
 		CADFCDD3245F36F3007F8190 /* ParkingDetailsResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParkingDetailsResponse.h; sourceTree = "<group>"; };
 		CADFCDD4245F36F3007F8190 /* ParkingDetailsResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParkingDetailsResponse.m; sourceTree = "<group>"; };
 		CADFCDD7246061F6007F8190 /* MainViewModelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewModelTests.m; sourceTree = "<group>"; };
+		CADFCDD9246076A3007F8190 /* NearbyParkingsResponseMock.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = NearbyParkingsResponseMock.plist; sourceTree = "<group>"; };
+		CADFCDDD246087CF007F8190 /* LocationMock.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = LocationMock.plist; sourceTree = "<group>"; };
 		DCF8CCF08DAE3DD62C56D8A4 /* Pods-Find Parking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Find Parking.release.xcconfig"; path = "Target Support Files/Pods-Find Parking/Pods-Find Parking.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3DF57A95EBE1BC1D1F2834E /* Pods_Find_ParkingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,6 +157,8 @@
 			children = (
 				0A1113CA93819000F09B6B21 /* Pods-Find Parking.debug.xcconfig */,
 				DCF8CCF08DAE3DD62C56D8A4 /* Pods-Find Parking.release.xcconfig */,
+				9F1E798FBA8246C2D8096450 /* Pods-Find ParkingTests.debug.xcconfig */,
+				8D71180DBF1749C041384311 /* Pods-Find ParkingTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -154,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				A66B28635BFA139A05D1B707 /* Pods_Find_Parking.framework */,
+				0FD5578968DBC7EB984E25CF /* Pods_Find_ParkingTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -208,6 +222,8 @@
 			children = (
 				CADFCDD62460615B007F8190 /* ViewModels */,
 				CADFCD6D245B0E72007F8190 /* Info.plist */,
+				CADFCDD9246076A3007F8190 /* NearbyParkingsResponseMock.plist */,
+				CADFCDDD246087CF007F8190 /* LocationMock.plist */,
 			);
 			path = "Find ParkingTests";
 			sourceTree = "<group>";
@@ -331,9 +347,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CADFCD7E245B0E72007F8190 /* Build configuration list for PBXNativeTarget "Find ParkingTests" */;
 			buildPhases = (
+				8C4E92354A2F9AD06FBD8066 /* [CP] Check Pods Manifest.lock */,
 				CADFCD63245B0E72007F8190 /* Sources */,
 				CADFCD64245B0E72007F8190 /* Frameworks */,
 				CADFCD65245B0E72007F8190 /* Resources */,
+				AABB04116B5FE1FEB914E7A0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -425,6 +443,8 @@
 				CADFCDC1245DE3C9007F8190 /* icon-website@2x.png in Resources */,
 				CADFCDC0245DE3C9007F8190 /* icon-address@2x.png in Resources */,
 				CADFCD5A245B0E4F007F8190 /* Main.storyboard in Resources */,
+				CADFCDDC246085A5007F8190 /* NearbyParkingsResponseMock.plist in Resources */,
+				CADFCDDF246087D8007F8190 /* LocationMock.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +452,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CADFCDDA246076A3007F8190 /* NearbyParkingsResponseMock.plist in Resources */,
+				CADFCDDE246087CF007F8190 /* LocationMock.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +487,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C4E92354A2F9AD06FBD8066 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Find ParkingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AABB04116B5FE1FEB914E7A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Find ParkingTests/Pods-Find ParkingTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Find ParkingTests/Pods-Find ParkingTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Find ParkingTests/Pods-Find ParkingTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F57EEB98BED7CCAEBC3C0B85 /* [CP] Embed Pods Frameworks */ = {
@@ -705,6 +766,7 @@
 		};
 		CADFCD7F245B0E72007F8190 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F1E798FBA8246C2D8096450 /* Pods-Find ParkingTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -724,6 +786,7 @@
 		};
 		CADFCD80245B0E72007F8190 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D71180DBF1749C041384311 /* Pods-Find ParkingTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

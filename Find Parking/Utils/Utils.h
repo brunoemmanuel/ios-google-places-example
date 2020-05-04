@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)showAlertErrorWithError:(NSString *)errormessage andParent:(UIViewController *)viewController;
 + (int)distanceBetweenStartedLocation:(Location *)startedLocation andFinalLocation:(Location *)finalLocation;
++ (NSDictionary *)loadInfoPlistWithFileName:(NSString *)fileName;
 
 @end
 

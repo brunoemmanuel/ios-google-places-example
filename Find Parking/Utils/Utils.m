@@ -37,4 +37,11 @@
     return d;
 }
 
++ (NSDictionary *)loadInfoPlistWithFileName:(NSString *)fileName {
+    NSString *plistFile = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:plistFile];
+    
+    return dict;
+}
+
 @end

@@ -7,8 +7,6 @@
 //
 
 #import "MainViewModel.h"
-#import "Api.h"
-#import "Location.h"
 #import "Utils.h"
 #import "NearbyParkingsResponse.h"
 
@@ -16,6 +14,7 @@
 
 @property (nonatomic, strong) NSArray *parkings;
 @property (nonatomic, strong) NSString *errorMessage;
+@property (nonatomic, strong) Api *api;
 
 @end
 
@@ -24,24 +23,38 @@
 - (instancetype)init {
     self = [super init];
     if (!self) return nil;
+    
+    [self initialize];
+    
+    _api = [[Api alloc] init];
+
+    return self;
+}
+
+- (instancetype)initWithApi:(Api *)api {
+    self = [super init];
+    if (!self) return nil;
+    
+    [self initialize];
+    
+    _api = api;
+    
+    return self;
+}
+
+- (void)initialize {
     _parkings = [[NSMutableArray alloc] init];
 
     _dataListUpdated = [RACObserve(self, parkings) mapReplace:@(YES)];
     _errorUpdated = [RACObserve(self, errorMessage) mapReplace:@(YES)];
-
-    return self;
 }
 
 - (NSUInteger)numberOfRowsInSection:(NSInteger)section {
     return [_parkings count];
 }
 
-- (void)loadNearbyParkings:(CLLocation *)clLocation {
-    Location *location = [[Location alloc] init];
-    [location setLatitude:clLocation.coordinate.latitude];
-    [location setLongitude:clLocation.coordinate.longitude];
-    
-    NearbyParkingsResponse * result = [[[Api alloc] init] loadNearbyParkingsWithLocation:location andRadius:300];
+- (void)loadNearbyParkings:(Location *)location {
+    NearbyParkingsResponse * result = [_api loadNearbyParkingsWithLocation:location andRadius:300];
     if(result.error != nil) {
         [self setErrorMessage:result.error];
     } else {
